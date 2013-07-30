@@ -149,3 +149,63 @@ CREATE TABLE `{statistics}` (
   UNIQUE KEY `article`  (`article`),
   KEY `article_visits`  (`article`, `visits`)
 );
+
+CREATE TABLE `{file}` (
+  `id`              int(10) UNSIGNED      NOT NULL AUTO_INCREMENT,
+  `name`            varchar(64)           NOT NULL DEFAULT '',
+  `type`            varchar(64)           NOT NULL DEFAULT '',
+  `description`     text                  NOT NULL DEFAULT '',
+  `url`             varchar(64)           NOT NULL DEFAULT '',
+  `size`            varchar(64)           NOT NULL DEFAULT '', 
+  `submitter`       varchar(64)           NOT NULL DEFAULT '',
+  `time_upload`     int(10) UNSIGNED      NOT NULL DEFAULT 0,
+  
+  PRIMARY KEY                     (`id`),
+  KEY `name`                      (`name`),
+  KEY `description`               (`description`),
+  KEY `submitter`                 (`submitter`),
+  KEY `time_upload`               (`time_upload`)
+)
+
+CREATE TABLE `{file_statistics}` (
+  `id`              int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `num_article`     int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `time_lastused`   int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `num_download`    int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  
+  PRIMARY KEY                     (`id`),
+  KEY `num_article`               (`num_article`),
+  KEY `time_lastused`             (`time_lastused`),
+  KEY `num_download`              (`num_download`)
+)
+
+CREATE TABLE `{image}` (
+  `id`              int(10) UNSIGNED      NOT NULL AUTO_INCREMENT,
+  `name`            varchar(64)           NOT NULL DEFAULT '',
+  `type`            varchar(64)           NOT NULL DEFAULT '',
+  `description`     text                  NOT NULL DEFAULT '',
+  `url`             varchar(64)           NOT NULL DEFAULT '',
+  `size`            varchar(64)           NOT NULL DEFAULT '', 
+  `width`           int(10) UNSIGNED      NOT NULL DEFAULT 0,
+  `height`          int(10) UNSIGNED      NOT NULL DEFAULT 0,
+  `submitter`       varchar(64)           NOT NULL DEFAULT '',
+  `time_upload`     int(10) UNSIGNED      NOT NULL DEFAULT 0,
+  
+  PRIMARY KEY                     (`id`),
+  KEY `name`                      (`name`),
+  KEY `description`               (`description`),
+  KEY `submitter`                 (`submitter`),
+  KEY `time_upload`               (`time_upload`)
+)
+
+CREATE TABLE `{image_statistics}` (
+  `id`              int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `num_article`     int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `time_lastused`   int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  `num_download`    int(10) UNSIGNED       NOT NULL DEFAULT 0,
+  
+  PRIMARY KEY                     (`id`),
+  KEY `num_article`               (`num_article`),
+  KEY `time_lastused`             (`time_lastused`),
+  KEY `num_download`              (`num_download`)
+)
