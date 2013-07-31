@@ -53,6 +53,10 @@ return array(
                     'category'      => 'table',
                     'author'        => 'table',
                     'statistics'    => 'table',
+                    'file'          => 'table',
+                    'file_statistics'=> 'table',
+                    'image'         => 'table',
+                    'image_statistics'=> 'table',
                 ),
             ),
             // Database meta
